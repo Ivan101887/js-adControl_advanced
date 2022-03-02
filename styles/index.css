@@ -65,7 +65,7 @@ html {
 }
 
 .container {
-  max-width: 700px;
+  max-width: 689px;
 }
 
 .header {
@@ -74,7 +74,7 @@ html {
 
 .header__title {
   margin-top: 15px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   font-size: 3rem;
   font-weight: 600;
   text-align: center;
@@ -82,55 +82,57 @@ html {
   color: #666;
 }
 
-.main {
-  -webkit-box-shadow: #9e9e9e 2px 0px 8px inset;
-          box-shadow: #9e9e9e 2px 0px 8px inset;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
 .ad__showBox {
-  width: 100%;
+  position: relative;
   overflow: hidden;
+  background-color: #fff;
 }
 
-.ad__imgContainer {
-  position: relative;
+.ad__wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-transition: all 1s;
   transition: all 1s;
-  background-color: #fff;
 }
 
 .ad__controller {
   position: absolute;
+  top: 0;
   height: 100%;
   background-color: #00000071;
   font-size: 20px;
-  padding: 81px 10px;
-  color: #fff;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  padding: 81px 7px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  color: #fff;
 }
 
-.ad .left {
+.ad__controller:hover {
+  cursor: pointer;
+}
+
+.ad__controller--left {
   left: 0;
 }
 
-.ad .right {
+.ad__controller--right {
   right: 0;
 }
 
 .ad__link {
-  width: 33.3333333%;
   margin: 15px;
   display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.ad__link:hover {
+  opacity: 0.8;
 }
 
 .ad__img {
@@ -152,10 +154,8 @@ html {
 .ad__pgTab {
   padding: 3px;
   width: 36px;
-  border: 1px solid #aaa;
   font-size: 14px;
-  color: #fff;
-  background-color: #bfbfbf;
+  background-color: #fff;
 }
 
 .ad__pgTab:hover {
