@@ -86,6 +86,9 @@ function makePaging(str = '') {
   return str;
 }
 
+function makeStr(times,str = '') {
+  
+}
 function makePicStr(str = '') {
   data.forEach((item)=>{
     str += `
@@ -105,17 +108,17 @@ function atClick(e) {
   index = nowIndex;
 }
 
-function changepgBar(c, i) {
-  elemAdPgBar.children[c].classList.remove('js-ad__pgTab');
-  elemAdPgBar.children[i].classList.add('js-ad__pgTab');
-  elemWrap.style.transform = `translateX(${-100 * i }%)`;
-  checker(i);
+function changepgBar(l, c) {
+  elemAdPgBar.children[l].classList.remove('js-ad__pgTab');
+  elemAdPgBar.children[c].classList.add('js-ad__pgTab');
+  elemWrap.style.transform = `translateX(${-100 * c }%)`;
+  checker(c);
 }
 
 function controllerClicked(e) {
   const self = e.target;
   let nowIndex = 0
-  if (self.nodeName !== 'DIV') return;
+  if (self.nodeName !== 'BUTTON') return;
   if (self.id === 'AdPrev') {
     nowIndex = index - 1;
   } else {

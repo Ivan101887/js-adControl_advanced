@@ -99,7 +99,7 @@ html {
 .ad__controller {
   position: absolute;
   top: 0;
-  height: 100%;
+  border: 0;
   background-color: #00000071;
   font-size: 20px;
   padding: 81px 7px;
