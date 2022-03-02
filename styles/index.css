@@ -56,7 +56,7 @@ table {
 html {
   font-size: 16px;
   font-family: "Arial", "Helvetica", "微軟正黑體", "sans-serif";
-  background-image: url("../images/body.png");
+  background-color: #bbb;
 }
 
 .mx-auto {
@@ -65,15 +65,20 @@ html {
 }
 
 .container {
-  max-width: 1024px;
+  max-width: 700px;
+}
+
+.header {
+  width: 100%;
 }
 
 .header__title {
-  padding-top: 70px;
-  padding-bottom: 70px;
-  font-size: 60px;
+  margin-top: 15px;
+  margin-bottom: 50px;
+  font-size: 3rem;
   font-weight: 600;
   text-align: center;
+  text-shadow: 0.025em 0.02em #fff;
   color: #666;
 }
 
@@ -90,11 +95,42 @@ html {
 }
 
 .ad__imgContainer {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-transition: all 1s;
   transition: all 1s;
+  background-color: #fff;
+}
+
+.ad__controller {
+  position: absolute;
+  height: 100%;
+  background-color: #00000071;
+  font-size: 20px;
+  padding: 81px 10px;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.ad .left {
+  left: 0;
+}
+
+.ad .right {
+  right: 0;
+}
+
+.ad__link {
+  width: 33.3333333%;
+  margin: 15px;
+  display: block;
 }
 
 .ad__img {
@@ -114,7 +150,8 @@ html {
 }
 
 .ad__pgTab {
-  padding: 12px;
+  padding: 3px;
+  width: 36px;
   border: 1px solid #aaa;
   font-size: 14px;
   color: #fff;
@@ -122,13 +159,7 @@ html {
 }
 
 .ad__pgTab:hover {
-  background-color: #ddd;
-  color: #000;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 
 .ad__pgTab + .ad__pgTab {
@@ -136,8 +167,7 @@ html {
 }
 
 .js-ad__pgTab {
-  background-color: #ffcc00;
-  color: #000;
+  background-color: #0ca0ce;
 }
 
 .js-ad__img {
