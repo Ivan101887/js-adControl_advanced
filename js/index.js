@@ -58,7 +58,7 @@ let pages = Math.round(data.length / perPage + 1);
 let index = 0;
 const elemAdPgBar = document.querySelector('#AdPgBar');
 const elemShowBox = document.querySelector('#ShowBox');
-const elemWrap = elemShowBox.querySelector('#AdWrap');
+const elemAdWrap = elemShowBox.querySelector('#AdWrap');
 const elemAdPrev = elemShowBox.querySelector('#AdPrev');
 const elemAdNext = elemShowBox.querySelector('#AdNext');
 
@@ -74,9 +74,26 @@ function setEvent() {
 }
 
 function render() {
-  elemWrap.innerHTML = makePicStr()
-  elemAdPgBar.innerHTML = makePaging();
+  elemAdWrap.innerHTML = makeDom('img', data.length);
+  elemAdPgBar.innerHTML = makeDom('li', pages);
   elemAdPgBar.children[index].classList.add('js-ad__pgTab');
+}
+
+function makeDom(type,times) {
+  let objE = document.createElement('div');
+  switch (type) {
+    case 'img':
+      for (let i = 0; i < times; i += 1) {
+        objE.innerHTML += `<a class="ad__link" href=${data[i].url}target="_blank"><img src = ${data[i].imgUrl} alt = "ad" width = "200" height = "150" class="ad__img"></a>`;
+      }
+      break;
+    case 'li':
+      for (let i = 0; i < times; i += 1) {
+        objE.innerHTML += `<li class="ad__pgTab" data-num="${i}"></li>`;
+      }
+      break;
+  }
+  return objE.innerHTML;
 }
 
 function makePaging(str = '') {
@@ -86,11 +103,8 @@ function makePaging(str = '') {
   return str;
 }
 
-function makeStr(times,str = '') {
-  
-}
 function makePicStr(str = '') {
-  data.forEach((item)=>{
+  data.forEach((item) => {
     str += `
       <a class="ad__link" href="${item.url}" target="_blank">
         <img src="${item.imgUrl}" alt="" width="200" height="150" class="ad__img">
@@ -111,7 +125,7 @@ function atClick(e) {
 function changepgBar(l, c) {
   elemAdPgBar.children[l].classList.remove('js-ad__pgTab');
   elemAdPgBar.children[c].classList.add('js-ad__pgTab');
-  elemWrap.style.transform = `translateX(${-100 * c }%)`;
+  elemAdWrap.style.transform = `translateX(${-100 * c}%)`;
   checker(c);
 }
 
